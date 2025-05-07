@@ -302,7 +302,7 @@ const Analytics = () => {
                               `${name}: ${(percent * 100).toFixed(0)}%`
                             }
                           >
-                            {trafficData.map((entry, index) => (
+                            {trafficData.map((_, index) => (
                               <Cell
                                 key={`cell-${index}`}
                                 fill={colors[index % colors.length]}
@@ -328,7 +328,7 @@ const Analytics = () => {
                           <YAxis label={{ value: 'Conversion Rate (%)', angle: -90, position: 'insideLeft' }} />
                           <Tooltip formatter={(value) => [`${value}%`, 'Conversion Rate']} />
                           <Bar dataKey="conversionRate" fill="#0284c7">
-                            {conversionData.map((entry, index) => (
+                            {conversionData.map((_, index) => (
                               <Cell
                                 key={`cell-${index}`}
                                 fill={colors[index % colors.length]}
