@@ -262,7 +262,8 @@ const Portfolio = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+                whileHover={{ scale: 1.04, boxShadow: '0 8px 32px 0 rgba(56,189,248,0.15)' }}
+                className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-transparent hover:border-blue-200 hover:bg-gradient-to-br hover:from-blue-50 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-gray-800 transition-all duration-300 cursor-pointer group"
                 onMouseEnter={() => setCursorType('hover')}
                 onMouseLeave={() => setCursorType('default')}
                 onClick={() => setSelectedProject(project)}
@@ -271,24 +272,24 @@ const Portfolio = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute top-4 right-4 bg-primary-600 text-white rounded-full p-2">
+                  <div className="absolute top-4 right-4 bg-primary-600 text-white rounded-full p-3 shadow-lg">
                     {project.icon}
                   </div>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-700 transition-colors">
                       {project.title}
                     </h3>
                   </div>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
                     {project.category}
                   </p>
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4 group-hover:text-blue-600 transition-colors">{project.description}</p>
                   <button
-                    className="text-primary-600 dark:text-primary-400 font-medium flex items-center text-sm"
+                    className="text-primary-600 dark:text-primary-400 font-medium flex items-center text-sm group-hover:underline"
                     onClick={(e) => {
                       e.stopPropagation();
                       setSelectedProject(project);

@@ -174,15 +174,16 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-800 rounded-lg p-8 text-center"
+                whileHover={{ scale: 1.07, boxShadow: '0 8px 32px 0 rgba(56,189,248,0.15)' }}
+                className="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center shadow-lg border border-transparent hover:border-blue-200 hover:bg-gradient-to-br hover:from-blue-50 hover:to-white dark:hover:from-primary-900/10 dark:hover:to-gray-800 transition-all duration-300 cursor-pointer group"
                 onMouseEnter={() => setCursorType('hover')}
                 onMouseLeave={() => setCursorType('default')}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full mb-6">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full mb-6 shadow-md">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{service.title}</h3>
-                <p className="text-gray-700 dark:text-gray-300">{service.description}</p>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-700 transition-colors">{service.title}</h3>
+                <p className="text-gray-700 dark:text-gray-300 group-hover:text-blue-600 transition-colors">{service.description}</p>
               </motion.div>
             ))}
           </div>

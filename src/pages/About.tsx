@@ -26,22 +26,22 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {[
             {
-              icon: <FaChartLine className="w-8 h-8 text-blue-600" />,
+              icon: <FaChartLine className="w-10 h-10 text-blue-600 drop-shadow-md" />,
               title: "Data Analytics",
               description: "Transform raw data into meaningful insights that drive business decisions"
             },
             {
-              icon: <FaDatabase className="w-8 h-8 text-blue-600" />,
+              icon: <FaDatabase className="w-10 h-10 text-blue-600 drop-shadow-md" />,
               title: "Data Cleaning",
               description: "Ensure your data is accurate, consistent, and ready for analysis"
             },
             {
-              icon: <FaRobot className="w-8 h-8 text-blue-600" />,
+              icon: <FaRobot className="w-10 h-10 text-blue-600 drop-shadow-md" />,
               title: "Automation",
               description: "Streamline your reporting processes with automated solutions"
             },
             {
-              icon: <FaLightbulb className="w-8 h-8 text-blue-600" />,
+              icon: <FaLightbulb className="w-10 h-10 text-blue-600 drop-shadow-md" />,
               title: "Smart Solutions",
               description: "Leverage data-driven insights to optimize your business performance"
             }
@@ -51,11 +51,12 @@ const About: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+              whileHover={{ scale: 1.07, boxShadow: '0 8px 32px 0 rgba(56,189,248,0.15)' }}
+              className="bg-white p-6 rounded-2xl shadow-lg border border-transparent hover:border-blue-200 hover:bg-gradient-to-br hover:from-blue-50 hover:to-white transition-all duration-300 cursor-pointer group"
             >
-              <div className="mb-4">{item.icon}</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
-              <p className="text-gray-600">{item.description}</p>
+              <div className="mb-4 flex justify-center">{item.icon}</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors">{item.title}</h3>
+              <p className="text-gray-600 group-hover:text-blue-600 transition-colors">{item.description}</p>
             </motion.div>
           ))}
         </div>

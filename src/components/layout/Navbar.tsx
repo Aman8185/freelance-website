@@ -63,30 +63,28 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-8 font-inter">
           <ul className="flex items-center space-x-8">
             {navLinks.map((link) => (
               <li key={link.path}>
                 <Link
                   to={link.path}
-                  className={`relative text-sm font-medium transition-colors ${
-                    location.pathname === link.path
-                      ? 'text-primary-600 dark:text-primary-400'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
-                  }`}
+                  className={`relative text-base font-medium px-2 py-1 transition-all duration-200 font-inter
+                    ${location.pathname === link.path
+                      ? 'text-primary-600 dark:text-primary-400 font-bold'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'}
+                  `}
                   onMouseEnter={() => setCursorType('hover')}
                   onMouseLeave={() => setCursorType('default')}
                 >
                   {link.name}
-                  {location.pathname === link.path && (
-                    <motion.div
-                      layoutId="navIndicator"
-                      className="absolute bottom-[-5px] left-0 right-0 h-[2px] bg-primary-500 dark:bg-primary-400"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.2 }}
-                    />
-                  )}
+                  <span
+                    className={`absolute left-0 right-0 -bottom-1 h-0.5 rounded-full transition-all duration-300
+                      ${location.pathname === link.path
+                        ? 'bg-primary-500 dark:bg-primary-400 w-full opacity-100'
+                        : 'bg-primary-500 dark:bg-primary-400 w-0 opacity-0 group-hover:w-full group-hover:opacity-100'}
+                    `}
+                  />
                 </Link>
               </li>
             ))}
@@ -171,16 +169,16 @@ const Navbar = () => {
             className="md:hidden bg-white dark:bg-gray-900 overflow-hidden"
           >
             <nav className="container mx-auto px-4 py-4">
-              <ul className="flex flex-col space-y-4">
+              <ul className="flex flex-col space-y-4 font-inter">
                 {navLinks.map((link) => (
                   <li key={link.path}>
                     <Link
                       to={link.path}
-                      className={`block py-2 text-base font-medium transition-colors ${
-                        location.pathname === link.path
-                          ? 'text-primary-600 dark:text-primary-400'
-                          : 'text-gray-700 dark:text-gray-300'
-                      }`}
+                      className={`block py-2 text-base font-medium px-2 transition-all duration-200 font-inter
+                        ${location.pathname === link.path
+                          ? 'text-primary-600 dark:text-primary-400 font-bold'
+                          : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'}
+                      `}
                       onMouseEnter={() => setCursorType('hover')}
                       onMouseLeave={() => setCursorType('default')}
                     >

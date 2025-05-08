@@ -245,7 +245,6 @@ const Home = () => {
               Discover how our comprehensive suite of analytics services can transform your business operations.
             </motion.p>
           </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <motion.div
@@ -258,11 +257,80 @@ const Home = () => {
                 onMouseEnter={() => setCursorType('hover')}
                 onMouseLeave={() => setCursorType('default')}
               >
-                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full flex items-center justify-center mb-4">
-                  {feature.icon}
+                <div className="mb-4 text-primary-600 dark:text-primary-400">{feature.icon}</div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects Section */}
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+            >
+              Featured Demo Projects
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-xl text-gray-700 dark:text-gray-300"
+            >
+              Click any project below to view a live demo dashboard with sample analytics.
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'E-commerce Sales Dashboard',
+                description: 'Track sales, revenue, and customer trends for a growing online store. See interactive charts and AI-powered insights.',
+                color: 'from-blue-400 to-blue-600',
+                link: '/dashboard/ecommerce',
+              },
+              {
+                title: 'Marketing Campaign Analytics',
+                description: 'Analyze campaign performance, traffic sources, and conversion rates. Explore how data drives smarter marketing decisions.',
+                color: 'from-purple-400 to-purple-600',
+                link: '/dashboard/marketing',
+              },
+              {
+                title: 'Customer Segmentation Demo',
+                description: 'Visualize customer segments, retention, and loyalty metrics. Discover actionable insights for business growth.',
+                color: 'from-green-400 to-green-600',
+                link: '/dashboard/customers',
+              },
+            ].map((project, idx) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ scale: 1.05, boxShadow: '0 8px 32px 0 rgba(56,189,248,0.10)' }}
+                className={`rounded-2xl p-8 shadow-lg bg-gradient-to-br ${project.color} text-white flex flex-col justify-between group transition-all duration-300 cursor-pointer`}
+              >
+                <div>
+                  <h3 className="text-2xl font-bold mb-4 group-hover:underline">{project.title}</h3>
+                  <p className="mb-8 text-white/90">{project.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
-                <p className="text-gray-700 dark:text-gray-300">{feature.description}</p>
+                <Link
+                  to={project.link}
+                  className="inline-block mt-auto px-6 py-2 bg-white text-primary-600 font-semibold rounded-md shadow hover:bg-primary-100 transition-colors"
+                  onMouseEnter={() => setCursorType('hover')}
+                  onMouseLeave={() => setCursorType('default')}
+                >
+                  View Dashboard
+                </Link>
               </motion.div>
             ))}
           </div>

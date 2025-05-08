@@ -19,6 +19,9 @@ import Analytics from './pages/Analytics'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 import About from './pages/About'
+import DashboardEcommerce from './pages/DashboardEcommerce'
+import DashboardMarketing from './pages/DashboardMarketing'
+import DashboardCustomers from './pages/DashboardCustomers'
 
 function App() {
   // State to track if page has loaded (for animations)
@@ -45,6 +48,9 @@ function App() {
                     <Route path="/analytics" element={<Analytics />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/about" element={<About />} />
+                    <Route path="/dashboard/ecommerce" element={<DashboardEcommerce />} />
+                    <Route path="/dashboard/marketing" element={<DashboardMarketing />} />
+                    <Route path="/dashboard/customers" element={<DashboardCustomers />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 )}
