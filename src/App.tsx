@@ -7,7 +7,7 @@ import { CustomCursorProvider } from './context/CustomCursorContext'
 import { ThemeProvider } from './context/ThemeContext'
 
 // Components we'll create
-import CustomCursor from './components/ui/CustomCursor'
+// Removed: import CustomCursor from './components/ui/CustomCursor'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 
