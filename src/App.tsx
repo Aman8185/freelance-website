@@ -36,7 +36,7 @@ function App() {
       <CustomCursorProvider>
         <Router>
           <div className="flex flex-col min-h-screen">
-            <CustomCursor />
+            {/* <CustomCursor /> */}
             <Navbar />
             <main className="flex-grow">
               <AnimatePresence mode="wait">
