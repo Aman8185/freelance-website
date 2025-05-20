@@ -22,6 +22,10 @@ import About from './pages/About'
 import DashboardEcommerce from './pages/DashboardEcommerce'
 import DashboardMarketing from './pages/DashboardMarketing'
 import DashboardCustomers from './pages/DashboardCustomers'
+import DataAnalyticsDemos from './pages/DataAnalyticsDemos'
+import WebsiteDemos from './pages/WebsiteDemos'
+import MarketingDemos from './pages/MarketingDemos'
+import DesignDemos from './pages/DesignDemos'
 
 function App() {
   // State to track if page has loaded (for animations)
@@ -51,6 +55,10 @@ function App() {
                     <Route path="/dashboard/ecommerce" element={<DashboardEcommerce />} />
                     <Route path="/dashboard/marketing" element={<DashboardMarketing />} />
                     <Route path="/dashboard/customers" element={<DashboardCustomers />} />
+                    <Route path="/data-analytics-demos" element={<DataAnalyticsDemos />} />
+                    <Route path="/website-demos" element={<WebsiteDemos />} />
+                    <Route path="/marketing-demos" element={<MarketingDemos />} />
+                    <Route path="/design-demos" element={<DesignDemos />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 )}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useCustomCursor } from '../context/CustomCursorContext';
 import { ChartBarIcon, ChartPieIcon, RocketLaunchIcon, LightBulbIcon, PresentationChartLineIcon } from '@heroicons/react/24/outline';
+import { FaCode, FaBullhorn, FaPalette } from 'react-icons/fa';
 
 // Component for animating text
 const AnimatedText = ({ text, className = '' }: { text: string; className?: string }) => {
@@ -101,6 +102,56 @@ const stats = [
   { value: '40+', label: 'Data Specialists' },
 ];
 
+const services = [
+  {
+    title: 'Data Analytics',
+    description: 'Transform raw data into actionable insights with advanced analytics, beautiful visualizations, and AI-powered intelligence.',
+    icon: <ChartBarIcon className="w-6 h-6" />,
+  },
+  {
+    title: 'Website Development',
+    description: 'Build modern, responsive websites using cutting-edge technologies like React, Next.js, and Tailwind CSS.',
+    icon: <FaCode className="w-6 h-6" />,
+  },
+  {
+    title: 'Digital Marketing',
+    description: 'Drive growth with strategic digital marketing campaigns, SEO optimization, and social media management.',
+    icon: <FaBullhorn className="w-6 h-6" />,
+  },
+  {
+    title: 'Graphic Design',
+    description: 'Create stunning visuals and branding materials that capture your audience and elevate your brand.',
+    icon: <FaPalette className="w-6 h-6" />,
+  },
+];
+
+const demos = [
+  {
+    title: 'Data Analytics',
+    description: 'Explore our data analytics demos with interactive charts and insights.',
+    image: 'https://via.placeholder.com/300x200',
+    link: '/data-analytics-demos',
+  },
+  {
+    title: 'Website Development',
+    description: 'View our sample website layouts and UI designs.',
+    image: 'https://via.placeholder.com/300x200',
+    link: '/website-demos',
+  },
+  {
+    title: 'Digital Marketing',
+    description: 'Check out our sample campaign reports and ad creatives.',
+    image: 'https://via.placeholder.com/300x200',
+    link: '/marketing-demos',
+  },
+  {
+    title: 'Graphic Design',
+    description: 'Discover our logo samples and brand identity previews.',
+    image: 'https://via.placeholder.com/300x200',
+    link: '/design-demos',
+  },
+];
+
 const Home = () => {
   const { setCursorType } = useCustomCursor();
   
@@ -112,114 +163,64 @@ const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center overflow-hidden">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-900 dark:to-gray-800 z-0" />
-        
-        {/* Animated background elements */}
-        <div className="absolute inset-0 z-0">
-          {[...Array(5)].map((_, index) => (
-            <motion.div
-              key={index}
-              className="absolute rounded-full bg-primary-400/10 dark:bg-primary-400/5"
-              initial={{
-                x: Math.random() * 100 - 50 + '%',
-                y: Math.random() * 100 - 50 + '%',
-                scale: Math.random() * 0.5 + 0.5,
-              }}
-              animate={{
-                x: [
-                  Math.random() * 100 - 50 + '%',
-                  Math.random() * 100 - 50 + '%',
-                  Math.random() * 100 - 50 + '%',
-                ],
-                y: [
-                  Math.random() * 100 - 50 + '%',
-                  Math.random() * 100 - 50 + '%',
-                  Math.random() * 100 - 50 + '%',
-                ],
-              }}
-              transition={{
-                duration: 20 + index * 5,
-                repeat: Infinity,
-                repeatType: 'reverse',
-              }}
-              style={{
-                width: `${(index + 1) * 10}vw`,
-                height: `${(index + 1) * 10}vw`,
-                opacity: 0.3 - index * 0.03,
-              }}
-            />
-          ))}
-        </div>
-        
-        {/* Hero content */}
-        <div className="container relative z-10">
+      <section className="pt-24 pb-16 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-800">
+        <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <motion.div
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-4 inline-block px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 text-sm font-medium"
+              className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6"
             >
-              Transforming Data into Insights
-            </motion.div>
-            
-            <AnimatedText
-              text="Unlock the Power of Your Data with TrendMetrics"
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-6"
-            />
-            
+              Your One-Stop Solution for Business Growth
+            </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-xl text-gray-700 dark:text-gray-300 mb-8"
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-xl text-gray-700 dark:text-gray-300"
             >
-              We help businesses transform raw data into actionable insights through advanced analytics, 
-              beautiful visualizations, and AI-powered intelligence.
+              From data analytics and website development to digital marketing and graphic design, TrendMetrics delivers comprehensive solutions to elevate your business.
             </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col sm:flex-row justify-center gap-4"
-            >
-              <Link
-                to="/services"
-                className="btn-primary px-8 py-3 text-base font-medium"
-                onMouseEnter={() => setCursorType('hover')}
-                onMouseLeave={() => setCursorType('default')}
-              >
-                Explore Services
-              </Link>
-              <Link
-                to="/contact"
-                className="px-8 py-3 text-base font-medium border-2 border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 rounded-md hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors"
-                onMouseEnter={() => setCursorType('hover')}
-                onMouseLeave={() => setCursorType('default')}
-              >
-                Contact Us
-              </Link>
-            </motion.div>
           </div>
         </div>
-        
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
-          <div className="w-6 h-10 rounded-full border-2 border-gray-400 dark:border-gray-600 flex justify-center">
-            <motion.div
-              className="w-1 h-2 bg-gray-400 dark:bg-gray-600 rounded-full mt-2"
-              animate={{ y: [0, 4, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            />
+      </section>
+      
+      {/* Services Overview */}
+      <section className="py-16 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              Our Services
+            </h2>
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+              Comprehensive solutions tailored to your business needs.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg text-center"
+              >
+                <div className="text-blue-600 dark:text-blue-400 mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{service.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{service.description}</p>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+        </div>
       </section>
       
       {/* Features Section */}
@@ -330,6 +331,58 @@ const Home = () => {
                   onMouseLeave={() => setCursorType('default')}
                 >
                   View Dashboard
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Demos Section */}
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+            >
+              Explore Our Service Demos
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-xl text-gray-700 dark:text-gray-300"
+            >
+              Discover our sample projects and creative work.
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {demos.map((demo, idx) => (
+              <motion.div
+                key={demo.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ scale: 1.05, boxShadow: '0 8px 32px 0 rgba(56,189,248,0.10)' }}
+                className="rounded-2xl p-8 shadow-lg bg-white text-gray-900 flex flex-col justify-between group transition-all duration-300 cursor-pointer"
+              >
+                <div>
+                  <h3 className="text-2xl font-bold mb-4 group-hover:underline">{demo.title}</h3>
+                  <p className="mb-8 text-gray-600">{demo.description}</p>
+                </div>
+                <Link
+                  to={demo.link}
+                  className="inline-block mt-auto px-6 py-2 bg-blue-600 text-white font-semibold rounded-md shadow hover:bg-blue-700 transition-colors"
+                  onMouseEnter={() => setCursorType('hover')}
+                  onMouseLeave={() => setCursorType('default')}
+                >
+                  View Demo
                 </Link>
               </motion.div>
             ))}

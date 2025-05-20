@@ -11,6 +11,7 @@ import {
   DocumentChartBarIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline';
+import { FaCode, FaShoppingCart, FaRocket } from 'react-icons/fa';
 
 // Define the workflow steps for data analytics
 const workflowSteps = [
@@ -102,6 +103,42 @@ const services = [
     title: 'AI-Powered Predictions',
     description: 'Machine learning models that forecast trends and provide valuable business insights.',
     icon: <ArrowsPointingOutIcon className="w-12 h-12" />,
+  },
+];
+
+const websiteServices = [
+  {
+    title: 'Custom Website Development',
+    description: 'We build tailored, responsive websites using cutting-edge technologies like React, Next.js, and Tailwind CSS. Our websites are fast, SEO-friendly, and optimized for all devices.',
+    icon: <FaCode className="w-6 h-6" />,
+  },
+  {
+    title: 'E-commerce Solutions',
+    description: 'Launch your online store with our robust e-commerce platforms. We integrate secure payment gateways, inventory management, and analytics to drive sales.',
+    icon: <FaShoppingCart className="w-6 h-6" />,
+  },
+  {
+    title: 'Website Enhancement',
+    description: 'Transform your existing website with modern design, improved performance, and advanced features. We ensure your site stays ahead of the competition.',
+    icon: <FaRocket className="w-6 h-6" />,
+  },
+];
+
+const dummyWebsites = [
+  {
+    name: 'E-commerce Store',
+    image: 'https://via.placeholder.com/300x200',
+    description: 'A fully responsive e-commerce platform with real-time inventory and analytics.',
+  },
+  {
+    name: 'Corporate Website',
+    image: 'https://via.placeholder.com/300x200',
+    description: 'A sleek corporate website showcasing services, team, and client testimonials.',
+  },
+  {
+    name: 'Portfolio Site',
+    image: 'https://via.placeholder.com/300x200',
+    description: 'A dynamic portfolio site for creatives, featuring animations and interactive elements.',
   },
 ];
 
@@ -267,6 +304,46 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      {/* Website Building Services Section */}
+      <div className="py-12 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">Website Building Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {websiteServices.map((service, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg"
+              >
+                <div className="text-blue-600 dark:text-blue-400 mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{service.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{service.description}</p>
+              </motion.div>
+            ))}
+          </div>
+          <h3 className="text-2xl font-bold text-center mb-6 text-gray-900 dark:text-white">Our Work</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {dummyWebsites.map((site, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg"
+              >
+                <img src={site.image} alt={site.name} className="w-full h-48 object-cover" />
+                <div className="p-4">
+                  <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{site.name}</h4>
+                  <p className="text-gray-600 dark:text-gray-300">{site.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* CTA Section */}
       <section className="py-16 bg-white dark:bg-gray-900">
