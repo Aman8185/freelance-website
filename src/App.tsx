@@ -26,6 +26,7 @@ import DataAnalyticsDemos from './pages/DataAnalyticsDemos'
 import WebsiteDemos from './pages/WebsiteDemos'
 import MarketingDemos from './pages/MarketingDemos'
 import DesignDemos from './pages/DesignDemos'
+import Pricing from './pages/Pricing'
 
 function App() {
   // State to track if page has loaded (for animations)
@@ -59,6 +60,7 @@ function App() {
                     <Route path="/website-demos" element={<WebsiteDemos />} />
                     <Route path="/marketing-demos" element={<MarketingDemos />} />
                     <Route path="/design-demos" element={<DesignDemos />} />
+                    <Route path="/pricing" element={<Pricing />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 )}
