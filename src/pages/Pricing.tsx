@@ -7,7 +7,7 @@ const Pricing: React.FC = () => {
   // Dummy exchange rates relative to USD (assuming initial prices are in USD)
   const exchangeRates: { [key: string]: number } = {
     USD: 1, // Base currency
-    INR: 83.5,
+    INR: 83.5, 
     EUR: 0.92,
     GBP: 0.79,
     CAD: 1.37,
