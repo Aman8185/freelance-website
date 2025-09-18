@@ -4,7 +4,12 @@
 
 @layer base {
   body {
-    @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300;
+    @apply text-gray-900 dark:text-white transition-colors duration-300;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  }
+
+  .dark body {
+    background: linear-gradient(180deg, #0f172a 0%, #0b1220 100%);
   }
 }
 
