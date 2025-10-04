@@ -56,8 +56,8 @@ const Footer = () => {
               onMouseLeave={() => setCursorType('default')}
             >
               <span className="text-2xl font-bold">
-                <span className="text-primary-600 dark:text-primary-400">Trend</span>
-                <span className="text-secondary-600 dark:text-secondary-400">Metrics</span>
+                <span className="text-primary-600 dark:text-primary-400">Tech</span>
+                <span className="text-secondary-600 dark:text-secondary-400">GenieHub</span>
               </span>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 mb-4">

@@ -58,8 +58,8 @@ const Navbar = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-primary-600 dark:text-primary-400">Trend</span>
-            <span className="text-secondary-600 dark:text-secondary-400">Metrics</span>
+            <span className="text-primary-600 dark:text-primary-400">Tech</span>
+            <span className="text-secondary-600 dark:text-secondary-400">GenieHub</span>
           </motion.div>
         </Link>
 
