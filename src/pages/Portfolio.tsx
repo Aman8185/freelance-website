@@ -186,7 +186,7 @@ const Portfolio = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Portfolio | TrendMetrics';
+    document.title = 'Portfolio | TechGenieHub';
   }, []);
 
   // Filter projects when category changes

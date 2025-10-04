@@ -53,7 +53,7 @@ export default tseslint.config({
 })
 ```
 
-# TrendMetrics
+# TechGenieHub
 
 A modern data analytics website built with React, Vite, and Tailwind CSS.
 

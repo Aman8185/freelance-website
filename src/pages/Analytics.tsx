@@ -112,7 +112,7 @@ const Analytics = () => {
 
   // Set page title
   useEffect(() => {
-    document.title = 'Analytics Dashboard | TrendMetrics';
+    document.title = 'Analytics Dashboard | TechGenieHub';
     
     // Simulate data loading
     const timer = setTimeout(() => {

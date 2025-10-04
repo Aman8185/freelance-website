@@ -52,7 +52,7 @@ const Contact = () => {
   
   // Set page title
   useEffect(() => {
-    document.title = 'Contact Us | TrendMetrics';
+    document.title = 'Contact Us | TechGenieHub';
   }, []);
   
   // Handle input changes
@@ -207,12 +207,12 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-medium text-gray-900 dark:text-white">Email</h3>
                       <a
-                        href="mailto:info@trendmetrics.com"
+                        href="mailto:info@techgeniehub.com"
                         className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
                         onMouseEnter={() => setCursorType('hover')}
                         onMouseLeave={() => setCursorType('default')}
                       >
-                        info@trendmetrics.com
+                        info@techgeniehub.com
                       </a>
                     </div>
                   </div>

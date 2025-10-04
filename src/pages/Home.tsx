@@ -102,7 +102,7 @@ const Home = () => {
   
   // Set page title
   useEffect(() => {
-    document.title = 'TrendMetrics - Data Analytics & AI Insights';
+    document.title = 'TechGenieHub - Data Analytics & AI Insights';
   }, []);
   
   return (
@@ -125,7 +125,7 @@ const Home = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-xl text-gray-700 dark:text-gray-300"
             >
-              From data analytics and website development to digital marketing and graphic design, TrendMetrics delivers comprehensive solutions to elevate your business.
+              From data analytics and website development to digital marketing and graphic design, TechGenieHub delivers comprehensive solutions to elevate your business.
             </motion.p>
           </div>
         </div>

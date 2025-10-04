@@ -1,8 +1,8 @@
-# TrendMetrics Documentation
+# TechGenieHub Documentation
 
 ## Overview
 
-TrendMetrics is a modern data analytics website built with React, TypeScript, Vite, and Tailwind CSS. The website showcases a fictional data analytics company that provides insights, visualizations, and analytics services.
+TechGenieHub is a modern data analytics website built with React, TypeScript, Vite, and Tailwind CSS. The website showcases a fictional data analytics company that provides insights, visualizations, and analytics services.
 
 ## Project Structure
 

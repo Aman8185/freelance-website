@@ -147,7 +147,7 @@ const Services = () => {
   const [expandedStep, setExpandedStep] = useState<string | null>(null);
 
   useEffect(() => {
-    document.title = 'Services | TrendMetrics';
+    document.title = 'Services | TechGenieHub';
   }, []);
 
   const toggleStep = (stepId: string) => {

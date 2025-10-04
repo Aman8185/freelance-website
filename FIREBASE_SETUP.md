@@ -1,12 +1,12 @@
-# Firebase Setup Guide for TrendMetrics
+# Firebase Setup Guide for TechGenieHub
 
-This guide will help you set up Firebase for the TrendMetrics website to store contact form submissions.
+This guide will help you set up Firebase for the TechGenieHub website to store contact form submissions.
 
 ## Step 1: Create a Firebase Project
 
 1. Go to [Firebase Console](https://console.firebase.google.com/)
 2. Click "Add project"
-3. Enter a project name (e.g., "TrendMetrics")
+3. Enter a project name (e.g., "TechGenieHub")
 4. Choose whether to enable Google Analytics (recommended)
 5. Follow the prompts to complete project creation
 
@@ -45,7 +45,7 @@ service cloud.firestore {
 1. In the Firebase console, click on the gear icon (⚙️) next to "Project Overview" and select "Project settings"
 2. Scroll down to "Your apps" section
 3. Click on the web icon (</>) to add a web app
-4. Register your app with a nickname (e.g., "TrendMetrics Web")
+4. Register your app with a nickname (e.g., "TechGenieHub Web")
 5. You'll be shown the Firebase configuration object that looks like this:
 
 ```javascript

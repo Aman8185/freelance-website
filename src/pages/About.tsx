@@ -95,7 +95,7 @@ const About: React.FC = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
             <p className="text-lg text-gray-700 mb-6">
-              Founded by Expereienced data analysts, TrendMetrics is dedicated to helping businesses of all sizes 
+              Founded by Expereienced data analysts, TechGenieHub is dedicated to helping businesses of all sizes 
               harness the power of their data. We believe that every business, from early-stage startups to 
               established enterprises, deserves access to clear, actionable insights that drive growth.
             </p>
