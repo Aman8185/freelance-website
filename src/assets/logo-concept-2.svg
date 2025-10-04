@@ -1,0 +1,88 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="crystalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#EC4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="dataStream" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="crystalGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Data Crystal Cube -->
+  <g transform="translate(30, 30)">
+    <!-- 3D Crystal Cube -->
+    <g filter="url(#crystalGlow)">
+      <!-- Front face -->
+      <path d="M-8,-8 L8,-8 L8,8 L-8,8 Z" fill="url(#crystalGradient)" opacity="0.8"/>
+      <!-- Top face -->
+      <path d="M-8,-8 L0,-16 L16,-16 L8,-8 Z" fill="url(#crystalGradient)" opacity="0.6"/>
+      <!-- Right face -->
+      <path d="M8,-8 L16,-16 L16,0 L8,8 Z" fill="url(#crystalGradient)" opacity="0.4"/>
+    </g>
+    
+    <!-- Data streams entering crystal -->
+    <g opacity="0.8">
+      <path d="M-20,-4 Q-15,-8 -10,-4" stroke="url(#dataStream)" stroke-width="2" fill="none">
+        <animate attributeName="stroke-dasharray" values="0,20;20,0;0,20" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M-20,0 Q-15,-4 -10,0" stroke="url(#dataStream)" stroke-width="2" fill="none">
+        <animate attributeName="stroke-dasharray" values="20,0;0,20;20,0" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M-20,4 Q-15,0 -10,4" stroke="url(#dataStream)" stroke-width="2" fill="none">
+        <animate attributeName="stroke-dasharray" values="0,20;20,0;0,20" dur="3s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Data streams exiting crystal -->
+    <g opacity="0.8">
+      <path d="M10,-4 Q15,-8 20,-4" stroke="url(#crystalGradient)" stroke-width="2" fill="none">
+        <animate attributeName="stroke-dasharray" values="20,0;0,20;20,0" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M10,0 Q15,-4 20,0" stroke="url(#crystalGradient)" stroke-width="2" fill="none">
+        <animate attributeName="stroke-dasharray" values="0,20;20,0;0,20" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M10,4 Q15,0 20,4" stroke="url(#crystalGradient)" stroke-width="2" fill="none">
+        <animate attributeName="stroke-dasharray" values="20,0;0,20;20,0" dur="3s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Internal data nodes -->
+    <circle cx="-4" cy="-4" r="1.5" fill="url(#dataStream)" opacity="0.9"/>
+    <circle cx="4" cy="-4" r="1.5" fill="url(#crystalGradient)" opacity="0.9"/>
+    <circle cx="-4" cy="4" r="1.5" fill="url(#dataStream)" opacity="0.9"/>
+    <circle cx="4" cy="4" r="1.5" fill="url(#crystalGradient)" opacity="0.9"/>
+    <circle cx="0" cy="0" r="2" fill="url(#crystalGradient)" opacity="0.7"/>
+    
+    <!-- Sparkle effects -->
+    <path d="M-12,-12 L-11,-11 L-12,-10 L-13,-11 Z" fill="url(#crystalGradient)" opacity="0.8"/>
+    <path d="M12,-12 L13,-11 L12,-10 L11,-11 Z" fill="url(#dataStream)" opacity="0.8"/>
+    <path d="M-12,12 L-11,13 L-12,14 L-13,13 Z" fill="url(#dataStream)" opacity="0.8"/>
+    <path d="M12,12 L13,13 L12,14 L11,13 Z" fill="url(#crystalGradient)" opacity="0.8"/>
+  </g>
+  
+  <!-- Text -->
+  <g transform="translate(70, 20)">
+    <text x="0" y="20" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="url(#crystalGradient)">
+      Tech
+    </text>
+    <text x="55" y="20" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="url(#dataStream)">
+      GenieHub
+    </text>
+    <text x="0" y="35" font-family="Inter, sans-serif" font-size="8" font-weight="400" fill="#6B7280" opacity="0.8">
+      CRYSTAL-CLEAR DATA INSIGHTS
+    </text>
+  </g>
+</svg>

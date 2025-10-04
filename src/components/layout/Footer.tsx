@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useCustomCursor } from '../../context/CustomCursorContext';
 import { FaTwitter, FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa';
+import TechGenieHubIcon from '../../assets/techgeniehub-icon.svg';
 
 const Footer = () => {
   const { setCursorType } = useCustomCursor();
@@ -51,10 +52,15 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link
               to="/"
-              className="inline-block mb-4"
+              className="inline-flex items-center space-x-3 mb-4"
               onMouseEnter={() => setCursorType('hover')}
               onMouseLeave={() => setCursorType('default')}
             >
+              <img 
+                src={TechGenieHubIcon} 
+                alt="TechGenieHub Logo" 
+                className="w-10 h-10"
+              />
               <span className="text-2xl font-bold">
                 <span className="text-primary-600 dark:text-primary-400">Tech</span>
                 <span className="text-secondary-600 dark:text-secondary-400">GenieHub</span>

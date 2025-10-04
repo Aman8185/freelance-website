@@ -1,0 +1,115 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dashboardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="metricGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EF4444;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="dashboardGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Analytics Dashboard -->
+  <g transform="translate(30, 30)">
+    <!-- Dashboard frame -->
+    <rect x="-12" y="-10" width="24" height="20" fill="none" stroke="url(#dashboardGradient)" stroke-width="2" rx="2"/>
+    
+    <!-- Chart 1: Bar Chart -->
+    <g transform="translate(-8, -6)">
+      <rect x="0" y="4" width="2" height="6" fill="url(#chartGradient)" opacity="0.8"/>
+      <rect x="3" y="2" width="2" height="8" fill="url(#chartGradient)" opacity="0.8"/>
+      <rect x="6" y="6" width="2" height="4" fill="url(#chartGradient)" opacity="0.8"/>
+      <rect x="9" y="1" width="2" height="9" fill="url(#chartGradient)" opacity="0.8"/>
+    </g>
+    
+    <!-- Chart 2: Line Chart -->
+    <g transform="translate(-8, 4)">
+      <path d="M0,6 L3,3 L6,4 L9,1 L12,2" stroke="url(#metricGradient)" stroke-width="2" fill="none"/>
+      <circle cx="0" cy="6" r="1" fill="url(#metricGradient)"/>
+      <circle cx="3" cy="3" r="1" fill="url(#metricGradient)"/>
+      <circle cx="6" cy="4" r="1" fill="url(#metricGradient)"/>
+      <circle cx="9" cy="1" r="1" fill="url(#metricGradient)"/>
+      <circle cx="12" cy="2" r="1" fill="url(#metricGradient)"/>
+    </g>
+    
+    <!-- Pie Chart -->
+    <g transform="translate(8, -6)">
+      <circle cx="0" cy="0" r="6" fill="none" stroke="url(#dashboardGradient)" stroke-width="1"/>
+      <path d="M0,0 L0,-6 A6,6 0 0,1 4.24,-4.24 Z" fill="url(#chartGradient)" opacity="0.8"/>
+      <path d="M0,0 L4.24,-4.24 A6,6 0 0,1 4.24,4.24 Z" fill="url(#metricGradient)" opacity="0.8"/>
+      <path d="M0,0 L4.24,4.24 A6,6 0 0,1 -4.24,4.24 Z" fill="url(#dashboardGradient)" opacity="0.6"/>
+      <path d="M0,0 L-4.24,4.24 A6,6 0 0,1 -4.24,-4.24 Z" fill="url(#chartGradient)" opacity="0.4"/>
+    </g>
+    
+    <!-- KPI Cards -->
+    <g transform="translate(-10, 8)">
+      <rect x="0" y="0" width="6" height="4" fill="url(#chartGradient)" opacity="0.1" stroke="url(#chartGradient)" stroke-width="1" rx="1"/>
+      <text x="3" y="2.5" font-family="Inter, sans-serif" font-size="3" font-weight="600" fill="url(#chartGradient)" text-anchor="middle">KPI</text>
+    </g>
+    
+    <g transform="translate(-2, 8)">
+      <rect x="0" y="0" width="6" height="4" fill="url(#metricGradient)" opacity="0.1" stroke="url(#metricGradient)" stroke-width="1" rx="1"/>
+      <text x="3" y="2.5" font-family="Inter, sans-serif" font-size="3" font-weight="600" fill="url(#metricGradient)" text-anchor="middle">AI</text>
+    </g>
+    
+    <g transform="translate(6, 8)">
+      <rect x="0" y="0" width="6" height="4" fill="url(#dashboardGradient)" opacity="0.1" stroke="url(#dashboardGradient)" stroke-width="1" rx="1"/>
+      <text x="3" y="2.5" font-family="Inter, sans-serif" font-size="3" font-weight="600" fill="url(#dashboardGradient)" text-anchor="middle">ML</text>
+    </g>
+    
+    <!-- Data flow indicators -->
+    <g opacity="0.6">
+      <circle cx="-15" cy="-8" r="1" fill="url(#chartGradient)">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="-15" cy="0" r="1" fill="url(#metricGradient)">
+        <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="-15" cy="8" r="1" fill="url(#dashboardGradient)">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Output indicators -->
+    <g opacity="0.6">
+      <circle cx="15" cy="-8" r="1" fill="url(#chartGradient)">
+        <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="15" cy="0" r="1" fill="url(#metricGradient)">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="15" cy="8" r="1" fill="url(#dashboardGradient)">
+        <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Text -->
+  <g transform="translate(70, 20)">
+    <text x="0" y="20" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="url(#dashboardGradient)">
+      Tech
+    </text>
+    <text x="55" y="20" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="url(#chartGradient)">
+      GenieHub
+    </text>
+    <text x="0" y="35" font-family="Inter, sans-serif" font-size="8" font-weight="400" fill="#6B7280" opacity="0.8">
+      BUSINESS INTELLIGENCE DASHBOARD
+    </text>
+  </g>
+</svg>

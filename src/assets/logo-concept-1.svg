@@ -1,0 +1,66 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="neuralGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="brainGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Neural Network Brain -->
+  <g transform="translate(30, 30)">
+    <!-- Brain outline -->
+    <path d="M-12,-8 Q-15,-12 -12,-16 Q-8,-18 -4,-16 Q0,-18 4,-16 Q8,-18 12,-16 Q15,-12 12,-8 Q15,-4 12,0 Q15,4 12,8 Q8,10 4,8 Q0,10 -4,8 Q-8,10 -12,8 Q-15,4 -12,0 Q-15,-4 -12,-8" 
+          fill="url(#brainGradient)" opacity="0.1" stroke="url(#brainGradient)" stroke-width="1.5"/>
+    
+    <!-- Neural nodes -->
+    <circle cx="-8" cy="-6" r="2.5" fill="url(#brainGradient)" filter="url(#brainGlow)"/>
+    <circle cx="0" cy="-8" r="2.5" fill="url(#neuralGradient)" filter="url(#brainGlow)"/>
+    <circle cx="8" cy="-6" r="2.5" fill="url(#brainGradient)" filter="url(#brainGlow)"/>
+    <circle cx="-6" cy="0" r="2" fill="url(#neuralGradient)" filter="url(#brainGlow)"/>
+    <circle cx="6" cy="0" r="2" fill="url(#brainGradient)" filter="url(#brainGlow)"/>
+    <circle cx="0" cy="6" r="2.5" fill="url(#neuralGradient)" filter="url(#brainGlow)"/>
+    
+    <!-- Neural connections -->
+    <line x1="-8" y1="-6" x2="0" y2="-8" stroke="url(#brainGradient)" stroke-width="1.5" opacity="0.7"/>
+    <line x1="0" y1="-8" x2="8" y2="-6" stroke="url(#neuralGradient)" stroke-width="1.5" opacity="0.7"/>
+    <line x1="-8" y1="-6" x2="-6" y2="0" stroke="url(#brainGradient)" stroke-width="1.5" opacity="0.7"/>
+    <line x1="8" y1="-6" x2="6" y2="0" stroke="url(#neuralGradient)" stroke-width="1.5" opacity="0.7"/>
+    <line x1="-6" y1="0" x2="0" y2="6" stroke="url(#brainGradient)" stroke-width="1.5" opacity="0.7"/>
+    <line x1="6" y1="0" x2="0" y2="6" stroke="url(#neuralGradient)" stroke-width="1.5" opacity="0.7"/>
+    
+    <!-- Data flow indicators -->
+    <circle cx="-4" cy="-10" r="1" fill="url(#neuralGradient)" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="4" cy="-10" r="1" fill="url(#brainGradient)" opacity="0.8">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Text -->
+  <g transform="translate(70, 20)">
+    <text x="0" y="20" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="url(#brainGradient)">
+      Tech
+    </text>
+    <text x="55" y="20" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="url(#neuralGradient)">
+      GenieHub
+    </text>
+    <text x="0" y="35" font-family="Inter, sans-serif" font-size="8" font-weight="400" fill="#6B7280" opacity="0.8">
+      AI-POWERED DATA INTELLIGENCE
+    </text>
+  </g>
+</svg>

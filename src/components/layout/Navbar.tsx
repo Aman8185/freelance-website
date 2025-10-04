@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
 import { useCustomCursor } from '../../context/CustomCursorContext';
 import { SunIcon, MoonIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import TechGenieHubIcon from '../../assets/techgeniehub-icon.svg';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -49,7 +50,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link
           to="/"
-          className="flex items-center space-x-2 text-2xl font-bold text-primary-600 dark:text-primary-400"
+          className="flex items-center space-x-3 text-2xl font-bold"
           onMouseEnter={() => setCursorType('hover')}
           onMouseLeave={() => setCursorType('default')}
         >
@@ -57,9 +58,17 @@ const Navbar = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
+            className="flex items-center space-x-3"
           >
-            <span className="text-primary-600 dark:text-primary-400">Tech</span>
-            <span className="text-secondary-600 dark:text-secondary-400">GenieHub</span>
+            <img 
+              src={TechGenieHubIcon} 
+              alt="TechGenieHub Logo" 
+              className="w-8 h-8"
+            />
+            <div className="flex">
+              <span className="text-primary-600 dark:text-primary-400">Tech</span>
+              <span className="text-secondary-600 dark:text-secondary-400">GenieHub</span>
+            </div>
           </motion.div>
         </Link>
 
